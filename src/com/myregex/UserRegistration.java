@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 	static Scanner sc=new Scanner(System.in);
-    public void validateUsername() {
+    public void validateUserName() {
         System.out.println("Enter UserName");
         String userName=sc.next();
         String regex = "^[A-Z]{1}[a-zA-z0-9]{2,}$";
@@ -35,11 +35,20 @@ public class UserRegistration {
             System.out.println("Invalid username");
         }
     }
-    /**
-     * create a main method
-     * all programs execute in main method
-     * args no arguments
-     */
+    public void validateLastName() {
+        System.out.println("Enter Lastname");
+        String lastName=sc.next();
+        String regex = "^[A-Z]{1}[a-zA-z0-9]{2,}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher matcher = p.matcher(lastName);
+        boolean result = matcher.matches();
+        if(result){
+            System.out.println("Valid lastname");
+        }
+        else {
+            System.out.println("Invalid lastname");
+        }
+    }
     public static void main(String[] args) {
         /**
          * create object for UserRegistration class
@@ -54,7 +63,7 @@ public class UserRegistration {
             /**
              * userinput choice for checking Multiple validation
              */
-            System.out.println("Enter choice.............\n " +"1)UserName\n");//uc1
+            System.out.println("Enter choice to check valid and invalid\n" +"Enter 1 for UserName\n" + "Enter 2 for Lastname\n");//uc1
 
             int choice=sc.nextInt();
             /**
@@ -63,8 +72,11 @@ public class UserRegistration {
              */
             switch(choice) {
                 case 1:
-                    registration.validateUsername();
+                    registration.validateUserName();
                     break;
+                case 2: 
+                	registration.validateLastName();
+                	break;
                 default:
                     System.out.println("Invalid choice");
                     System.exit(0);

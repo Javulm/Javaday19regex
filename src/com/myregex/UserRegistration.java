@@ -21,11 +21,11 @@ public class UserRegistration {
          */
         Matcher matcher = p.matcher(userName);
         /**
-         * boolean data type is used for return op is true or false
+         * boolean data type is used for return output is true or false
          */
         boolean result = matcher.matches();
         /**
-         *  if else conditional statment is used
+         *  if else conditional statement is used
          *  if pattern match then print  valid username if not matched print invalid username
          */
         if(result){
@@ -35,11 +35,6 @@ public class UserRegistration {
             System.out.println("Invalid username");
         }
     }
-    /**
-     * create a main method
-     * all programs execute in main method
-     * args no arguments
-     */
     public static void main(String[] args) {
         /**
          * create object for UserRegistration class
@@ -50,11 +45,10 @@ public class UserRegistration {
          * while loop is used
          */
         while(true) {
-
             /**
-             * userinput choice for checking Multiple validation
+             * user input choice for checking Multiple validation
              */
-            System.out.println("Enter choice.............\n " +"1)UserName\n");//uc1
+            System.out.println("Enter choice.............\n " +"1)UserName\n");
 
             int choice=sc.nextInt();
             /**
